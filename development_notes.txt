@@ -1,0 +1,8 @@
+Haribol!
+To resolve linting errors when using TailwindCSS v4 syntax in CSS files, add the following setting to VS code options (Ctrl+,):
+
+"files.associations": {
+  "*.css": "tailwindcss"
+}
+
+Source: https://github.com/tailwindlabs/tailwindcss-intellisense
