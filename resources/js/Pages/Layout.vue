@@ -16,6 +16,19 @@ import TopbarLink from "./components/TopbarLink.vue";
                 <TopbarLink href="/contact">Contact</TopbarLink>
             </header>
             <slot />
+            <footer
+                class="flex flex-row items-center justify-between px-10 py-12"
+            >
+                <img class="w-1/3" src="../../images/logo.png" alt="Logo" />
+                <p
+                    class="non-italic text-center font-poppins text-lg text-deepblue-500"
+                >
+                    contact@hkm-group.org<br />
+                    <br />
+                    Hare Krishna Hill, West of Chord Road, Rajajinagar,<br />
+                    Bengaluru, Karnataka, India - 560 010
+                </p>
+            </footer>
         </div>
     </main>
 </template>
