@@ -2,6 +2,7 @@
 import Layout from "./Layout.vue";
 import LeftArrowButton from "./components/LeftArrowButton.vue";
 import RightArrowButton from "./components/RightArrowButton.vue";
+import SectionHeading from "./SectionHeading.vue";
 </script>
 
 <template>
@@ -61,25 +62,25 @@ import RightArrowButton from "./components/RightArrowButton.vue";
                 </div>
             </section>
 
-            <!-- Contributions, Haribol -->
+            <!-- Contributions Sections, Haribol -->
             <section
-                class="flex flex-col items-center bg-[url(../images/home-page/bg2.jpg)] px-32 py-16"
+                class="flex flex-col items-center bg-[url(../images/home-page/bg2.jpg)] px-32 pt-16 pb-30"
             >
-                <h2 class="text-center text-5xl font-semibold text-gray-200">
-                    Contributions
-                </h2>
+                <SectionHeading class="text-gray-200"
+                    >Contributions</SectionHeading
+                >
                 <div class="mt-10 flex flex-row items-center">
                     <LeftArrowButton />
-                    <div class="relative ml-4 flex w-[58rem] shrink-0 flex-row">
+                    <div class="relative ml-4 flex shrink-0 flex-row">
                         <img
                             class="w-[28rem] shrink-0"
                             src="../../images/Akshaya Patra Foundation- Contributions.png"
                             alt="Placeholder image"
                         />
                         <div
-                            class="absolute top-20 right-20 size-[30rem] shrink-0 bg-gray-200 px-20 py-16"
+                            class="relative top-20 right-10 size-[30rem] shrink-0 bg-gray-200 px-20 py-16"
                         >
-                            <h3 class="text-3xl font-medium text-[#10437e]">
+                            <h3 class="text-3xl font-medium text-deepblue-500">
                                 Akshaya Patra Foundation
                             </h3>
                             <p
@@ -92,14 +93,41 @@ import RightArrowButton from "./components/RightArrowButton.vue";
                                 largest mid-day meal programs.
                             </p>
                             <button
-                                class="mt-4 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                                class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
                             >
                                 Read More
                             </button>
                         </div>
                     </div>
-                    <RightArrowButton class="-ml-16" />
+                    <RightArrowButton class="-ml-6" />
                 </div>
+            </section>
+
+            <!-- Highlights Section, Haribol -->
+            <section class="grid grid-cols-[45%_55%]">
+                <div
+                    class="flex flex-col items-center place-self-center bg-[#def0fa] px-20 py-16"
+                >
+                    <SectionHeading class="text-deepblue-500"
+                        >Highlights</SectionHeading
+                    >
+                    <p
+                        class="mt-8 text-center text-base/loose font-light text-gray-600"
+                    >
+                        Key moments from our core initiatives and impactful
+                        projects focused towards community upliftment, social
+                        welfare programmes and cultural heritage preservation.
+                    </p>
+                    <button
+                        class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                    >
+                        Read More
+                    </button>
+                </div>
+                <img
+                    src="../../images/home-page/highlights-img1.jpg"
+                    alt="Highlights Image"
+                />
             </section>
         </div>
     </Layout>
