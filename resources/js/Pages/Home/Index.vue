@@ -228,6 +228,40 @@ import RightButton from "./components/RightButton.vue";
                     />
                 </div>
             </section>
+
+            <!-- Podcasts Section, Haribol -->
+            <section class="grid grid-cols-[35%_65%] bg-[#def0fa] px-10 py-32">
+                <div class="flex flex-col items-center justify-center">
+                    <SectionHeading class="text-deepblue-500"
+                        >Podcasts</SectionHeading
+                    >
+                    <p
+                        class="mt-10 text-center text-sm font-light text-gray-500"
+                    >
+                        Through engaging and insightful discussion, these
+                        conversations explore the guidance on spiritual
+                        practices, Vedic wisdom and holistic well-being of a
+                        person in the modern world.
+                    </p>
+                    <button
+                        class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                    >
+                        Read More
+                    </button>
+                </div>
+                <div class="flex flex-row items-center justify-center gap-4">
+                    <img
+                        src="../../../images/podcast1.png"
+                        class="w-[28rem]"
+                        alt="Podcast 1"
+                    />
+                    <img
+                        src="../../../images/podcast2.png"
+                        class="w-72"
+                        alt="Podcast 1"
+                    />
+                </div>
+            </section>
         </div>
     </Layout>
 </template>
