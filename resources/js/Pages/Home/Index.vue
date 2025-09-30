@@ -3,6 +3,9 @@ import Layout from "../Layout.vue";
 import LeftArrowButton from "./components/LeftArrowButton.vue";
 import RightArrowButton from "./components/RightArrowButton.vue";
 import SectionHeading from "./SectionHeading.vue";
+import MediaCard from "./components/MediaCard.vue";
+import LeftButton from "./components/LeftButton.vue";
+import RightButton from "./components/RightButton.vue";
 </script>
 
 <template>
@@ -130,10 +133,32 @@ import SectionHeading from "./SectionHeading.vue";
                 />
             </section>
 
+            <!-- Media Section, Haribol -->
             <section
                 class="flex flex-col items-center bg-[url(../images/home-page/bg1.jpg)] bg-cover px-4 py-20"
             >
                 <SectionHeading class="text-deepblue-500">Media</SectionHeading>
+                <div class="flex flex-row items-center justify-center gap-4">
+                    <LeftButton />
+                    <div class="mt-16 grid grid-cols-3 gap-8">
+                        <MediaCard
+                            imgsrc="/img/media-img1.jpg"
+                            title="Gita Jayanti 2024"
+                            content="Sri Chanchalapathi Dasa explains that reading the Bhagavad Gita properly, as advised by Krishna, is like seeing Him face-to-face. This involves approaching a bonafide spiritual master with devotion and surrender..."
+                        />
+                        <MediaCard
+                            imgsrc="/img/media-img2.jpg"
+                            title="The role of meditation in mental health"
+                            content="Meditation, as emphasized by Srila Prabhupada, is a transformative process that aligns individuals with their true spiritual nature, reduces stress, and builds resilience."
+                        />
+                        <MediaCard
+                            imgsrc="/img/media-img3.jpg"
+                            title="What is the goal of life?"
+                            content="One has to be very blessed to get the right understanding. But what happens? Even in our country, there are so many philosophers, and even scholars of Vedic knowledge, yet they still miss some essential truths."
+                        />
+                    </div>
+                    <RightButton />
+                </div>
             </section>
         </div>
     </Layout>
