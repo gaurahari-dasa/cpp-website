@@ -1,5 +1,5 @@
 <script setup>
-import Layout from "./Layout.vue";
+import Layout from "../Layout.vue";
 import LeftArrowButton from "./components/LeftArrowButton.vue";
 import RightArrowButton from "./components/RightArrowButton.vue";
 import SectionHeading from "./SectionHeading.vue";
@@ -11,12 +11,12 @@ import SectionHeading from "./SectionHeading.vue";
             <!-- Hero Section, Haribol -->
             <section class="relative">
                 <img
-                    src="../../images/home-page/ban-logo.png"
+                    src="../../../images/home-page/ban-logo.png"
                     alt="Banner Logo"
                     class="absolute top-6 right-10 w-[43%]"
                 />
                 <img
-                    src="../../images/home-page/Top-banner.jpg"
+                    src="../../../images/home-page/Top-banner.jpg"
                     alt="Top Banner"
                 />
                 <h1
@@ -34,7 +34,7 @@ import SectionHeading from "./SectionHeading.vue";
                 class="flex flex-row gap-20 bg-[url(../images/home-page/bg1.jpg)] bg-cover px-18 py-24"
             >
                 <img
-                    src="../../images/home-page/img3.png"
+                    src="../../../images/home-page/img3.png"
                     class="w-[40%] shrink-0"
                     alt="CPP Intro Image"
                 />
@@ -74,7 +74,7 @@ import SectionHeading from "./SectionHeading.vue";
                     <div class="relative ml-4 flex shrink-0 flex-row">
                         <img
                             class="w-[28rem] shrink-0"
-                            src="../../images/Akshaya Patra Foundation- Contributions.png"
+                            src="../../../images/Akshaya Patra Foundation- Contributions.png"
                             alt="Placeholder image"
                         />
                         <div
@@ -125,9 +125,15 @@ import SectionHeading from "./SectionHeading.vue";
                     </button>
                 </div>
                 <img
-                    src="../../images/home-page/highlights-img1.jpg"
+                    src="../../../images/home-page/highlights-img1.jpg"
                     alt="Highlights Image"
                 />
+            </section>
+
+            <section
+                class="flex flex-col items-center bg-[url(../images/home-page/bg1.jpg)] bg-cover px-4 py-20"
+            >
+                <SectionHeading class="text-deepblue-500">Media</SectionHeading>
             </section>
         </div>
     </Layout>
