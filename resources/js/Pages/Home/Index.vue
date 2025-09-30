@@ -9,7 +9,7 @@ import RightButton from "./components/RightButton.vue";
 </script>
 
 <template>
-    <Layout>
+    <Layout active="Home">
         <div class="font-poppins">
             <!-- Hero Section, Haribol -->
             <section class="relative">
