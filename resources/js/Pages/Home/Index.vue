@@ -163,7 +163,7 @@ import RightButton from "./components/RightButton.vue";
 
             <!-- Events Section, Haribol -->
             <section
-                class="flex flex-col items-center bg-[url(../images/home-page/bg2.jpg)] px-32 pt-16 pb-30"
+                class="flex flex-col items-center bg-[url(../images/home-page/bg3.jpg)] bg-cover bg-no-repeat px-32 pt-16 pb-30"
             >
                 <SectionHeading class="text-gray-200">Events</SectionHeading>
                 <div class="mt-10 flex flex-row items-center">
@@ -198,6 +198,34 @@ import RightButton from "./components/RightButton.vue";
                         </div>
                     </div>
                     <RightArrowButton class="-ml-6" />
+                </div>
+            </section>
+
+            <!-- Dignitaries Section, Haribol -->
+            <section
+                class="flex h-[38rem] flex-col items-center justify-center bg-[url(../images/home-page/dignitaries-bg.jpg)] bg-contain bg-center bg-no-repeat"
+            >
+                <div class="grid grid-cols-12 items-center justify-self-center">
+                    <SectionHeading class="col-span-8 col-start-2 text-gray-200"
+                        >Dignitaries</SectionHeading
+                    >
+                    <LeftArrowButton class="justify col-span-1 row-start-2" />
+                    <div class="col-span-8 row-start-2">
+                        <p class="mt-10 text-gray-200">
+                            Featuring eminent leaders, scholars and visionaries
+                            from across the world coming together for shared
+                            commitments, reflecting the universal relevance of
+                            the message of harmony and service.
+                        </p>
+                        <button
+                            class="mt-6 border border-blue-800 bg-gray-200 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                        >
+                            Read More
+                        </button>
+                    </div>
+                    <RightArrowButton
+                        class="col-span-1 col-start-12 row-start-2"
+                    />
                 </div>
             </section>
         </div>
