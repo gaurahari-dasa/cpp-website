@@ -65,7 +65,7 @@ import RightButton from "./components/RightButton.vue";
                 </div>
             </section>
 
-            <!-- Contributions Sections, Haribol -->
+            <!-- Contributions Section, Haribol -->
             <section
                 class="flex flex-col items-center bg-[url(../images/home-page/bg2.jpg)] px-32 pt-16 pb-30"
             >
@@ -87,7 +87,7 @@ import RightButton from "./components/RightButton.vue";
                                 Akshaya Patra Foundation
                             </h3>
                             <p
-                                class="mt-4 h-48 overflow-hidden text-base/loose text-gray-600"
+                                class="mt-4 overflow-hidden text-base/loose text-gray-600"
                             >
                                 The Akshaya Patra Foundation was established
                                 with a mission to address the problem of
@@ -107,9 +107,9 @@ import RightButton from "./components/RightButton.vue";
             </section>
 
             <!-- Highlights Section, Haribol -->
-            <section class="grid grid-cols-[45%_55%]">
+            <section class="grid grid-cols-[45%_55%] bg-[#def0fa]">
                 <div
-                    class="flex flex-col items-center place-self-center bg-[#def0fa] px-20 py-16"
+                    class="flex flex-col items-center place-self-center px-20 py-16"
                 >
                     <SectionHeading class="text-deepblue-500"
                         >Highlights</SectionHeading
@@ -158,6 +158,46 @@ import RightButton from "./components/RightButton.vue";
                         />
                     </div>
                     <RightButton />
+                </div>
+            </section>
+
+            <!-- Events Section, Haribol -->
+            <section
+                class="flex flex-col items-center bg-[url(../images/home-page/bg2.jpg)] px-32 pt-16 pb-30"
+            >
+                <SectionHeading class="text-gray-200">Events</SectionHeading>
+                <div class="mt-10 flex flex-row items-center">
+                    <LeftArrowButton />
+                    <div class="relative ml-4 flex shrink-0 flex-row">
+                        <img
+                            class="w-[28rem] shrink-0"
+                            src="../../../images/img5.png"
+                            alt="Placeholder image"
+                        />
+                        <div
+                            class="relative top-20 right-10 size-[30rem] shrink-0 bg-gray-200 px-10 py-8"
+                        >
+                            <h3 class="text-3xl font-medium text-deepblue-500">
+                                Shri Chanchalapathi Dasa addressing the audience
+                                at the UN Trusteeship Council Chamber
+                            </h3>
+                            <p
+                                class="mt-4 overflow-hidden text-base/loose text-gray-600"
+                            >
+                                Marking the pivotal steps through vision,
+                                dedication, and commitment to a great mission
+                                towards humanity and purpose by eradicating
+                                classroom hunger, enhancing education and
+                                improving the quality of life.
+                            </p>
+                            <button
+                                class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                            >
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                    <RightArrowButton class="-ml-6" />
                 </div>
             </section>
         </div>
