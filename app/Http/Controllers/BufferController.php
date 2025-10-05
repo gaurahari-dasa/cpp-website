@@ -17,7 +17,7 @@ class BufferController extends Controller
         $take = request()->take;
         $from = request()->from;
         if ($from < 0) {
-            throw new Exception("Cannot pickup data from a negative position, Haribol!");
+            throw new Exception("Request parameter 'from' must not be negative, Haribol!");
         }
         if ($take < 0 && !$from) {
             return ['take' => 0, 'from' => 0];

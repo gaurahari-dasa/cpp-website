@@ -13,7 +13,8 @@ import { ref } from "vue";
 // }, 1000);
 const buffer = new ContentBuffer(
     "http://127.0.0.1:8000/dignitaries/thumbnails",
-    3,
+    6,
+    6,
 );
 </script>
 
@@ -35,6 +36,7 @@ const buffer = new ContentBuffer(
             </div>
             <button
                 class="mt-12 bg-[#10447e] px-8 py-4 text-sm font-semibold text-gray-200 uppercase"
+                @click="buffer.forward(6)"
             >
                 Load More
             </button>

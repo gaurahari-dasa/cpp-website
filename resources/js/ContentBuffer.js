@@ -41,12 +41,12 @@ export default class ContentBuffer {
             .catch((err) => console.error(err));
     }
 
-    loadNext() {
+    loadForward(count) {
         //http://xyz.com?[from=4&take=1]
         const url = new URL(this.url);
         const params = url.searchParams;
         params.append("from", this.bufferEndIndex);
-        params.append("take", 1);
+        params.append("take", count);
         axios
             .get(url.href)
             .then((resp) => {
@@ -61,17 +61,25 @@ export default class ContentBuffer {
             .catch((err) => console.error(err));
     }
 
-    forward() {
-        if (this.windowEndIndex >= this.bufferEndIndex - this.bufferMargin) {
-            this.loadNext();
+    forward(count = 1) {
+        if (count < 1) {
+            throw new Error(
+                "Argument value should be greater than 0, Haribol!",
+            );
         }
-        if (this.windowEndIndex < this.bufferEndIndex) {
-            ++this.windowEndIndex;
-            ++this.windowBeginIndex;
+        if (this.windowEndIndex >= this.bufferEndIndex - this.bufferMargin) {
+            this.loadForward(count);
+        }
+        for (let i = 1; i <= count; ++i) {
+            if (this.windowEndIndex < this.bufferEndIndex) {
+                ++this.windowEndIndex;
+                ++this.windowBeginIndex;
+                this.setWindow();
+            }
         }
     }
 
-    loadBack() {
+    loadBackward(count) {
         //http://xyz.com?[from=4&take=-1]
         if (this.bufferBeginIndex === 0) {
             return;
@@ -79,7 +87,7 @@ export default class ContentBuffer {
         const url = new URL(this.url);
         const params = url.searchParams;
         params.append("from", this.bufferBeginIndex);
-        params.append("take", -1);
+        params.append("take", -count);
         axios
             .get(url.href)
             .then((resp) => {
@@ -94,16 +102,24 @@ export default class ContentBuffer {
             .catch((err) => console.error(err));
     }
 
-    backward() {
-        if (this.windowBeginIndex > this.bufferBeginIndex) {
-            --this.windowBeginIndex;
-            --this.windowEndIndex;
+    backward(count = 1) {
+        if (count < 1) {
+            throw new Error(
+                "Argument value should be greater than 0, Haribol!",
+            );
+        }
+        for (let i = 1; i <= count; ++i) {
+            if (this.windowBeginIndex > this.bufferBeginIndex) {
+                --this.windowBeginIndex;
+                --this.windowEndIndex;
+                this.setWindow();
+            }
         }
         if (
             this.windowBeginIndex <=
             this.bufferBeginIndex + this.bufferMargin
         ) {
-            this.loadBack();
+            this.loadBackward(count);
         }
     }
 }
