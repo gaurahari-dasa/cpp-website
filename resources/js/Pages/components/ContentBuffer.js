@@ -71,6 +71,7 @@ export default class ContentBuffer {
             this.loadForward(count);
         }
         for (let i = 1; i <= count; ++i) {
+            // TODO: eliminate the for loop, Haribol
             if (this.windowEndIndex < this.bufferEndIndex) {
                 ++this.windowEndIndex;
                 ++this.windowBeginIndex;
@@ -109,6 +110,7 @@ export default class ContentBuffer {
             );
         }
         for (let i = 1; i <= count; ++i) {
+            // TODO: eliminate the for loop, Haribol
             if (this.windowBeginIndex > this.bufferBeginIndex) {
                 --this.windowBeginIndex;
                 --this.windowEndIndex;

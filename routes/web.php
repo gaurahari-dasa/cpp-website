@@ -15,6 +15,10 @@ Route::get('/dignitaries', function () {
 
 Route::get('/dignitaries/thumbnails', [BufferController::class, 'dignitaries']);
 
+Route::get('/srila-prabhupada', function () {
+    return Inertia::render('SrilaPrabhupada/Index');
+});
+
 Route::get('/contrib', function () {
     $take = request()->take;
     $from = request()->from;
