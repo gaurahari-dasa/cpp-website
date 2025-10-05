@@ -1,29 +1,32 @@
 <script setup>
 import Layout from "../Layout.vue";
-import SectionHeading from "../Home/SectionHeading.vue";
+import SectionHeading from "../components/SectionHeading.vue";
 import ContentBuffer from "../../ContentBuffer";
 import MediaCard from "./components/MediaCard.vue";
+import Details from "./components/Details.vue";
 import { ref } from "vue";
 
-// setTimeout(function () {
-//     obj.moveNext();
-//     setTimeout(function () {
-//         obj.moveBack();
-//     }, 1000);
-// }, 1000);
 const buffer = new ContentBuffer(
     "http://127.0.0.1:8000/dignitaries/thumbnails",
     6,
     6,
 );
+
+const detailCard = ref(null);
+
+function displayDetails(card) {
+    detailCard.value = card;
+    window.scrollTo(0, 0);
+}
 </script>
 
 <template>
     <Layout active="Dignitaries">
+        <Details v-if="detailCard" :card="detailCard" />
         <div
             class="flex flex-col items-center bg-deepblue-100 px-18 py-20 font-poppins"
         >
-            <SectionHeading class="text-deepblue-500">
+            <SectionHeading v-show="!detailCard" class="text-deepblue-500">
                 Dignitaries
             </SectionHeading>
             <div class="mt-20 grid grid-cols-2 justify-items-center gap-6">
@@ -32,6 +35,7 @@ const buffer = new ContentBuffer(
                     :imgsrc="card.page_thumbnail"
                     :title="card.page_title"
                     :content="card.page_desc"
+                    @click="displayDetails(card)"
                 />
             </div>
             <button

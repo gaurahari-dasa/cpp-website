@@ -1,5 +1,6 @@
 <script setup>
 defineProps(["imgsrc", "title", "content"]);
+defineEmits(["click"]);
 </script>
 <template>
     <div class="flex flex-col items-center bg-gray-50 pb-10 shadow-lg">
@@ -12,6 +13,7 @@ defineProps(["imgsrc", "title", "content"]);
         </p>
         <button
             class="mt-6 bg-[#399099] px-8 py-4 text-sm font-semibold text-gray-200 uppercase"
+            @click="$emit('click')"
         >
             Read More
         </button>

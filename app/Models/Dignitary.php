@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dignitaries extends Model
+class Dignitary extends Model
 {
     protected $table = 'mstr_dignitaries';
 }

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dignitaries;
+use App\Helpers\AssetUrl;
+use App\Models\Dignitary;
 use App\Traits\ApiResponses;
 use Exception;
 use Illuminate\Http\Request;
@@ -31,10 +32,10 @@ class BufferController extends Controller
     public function dignitaries()
     {
         extract(self::computePickup());
-        Log::info(['take', $take, 'from', $from]);
-        $data = Dignitaries::skip($from)->take($take)->get();
+        $data = Dignitary::where('active', true)->skip($from)->take($take)->get();
         foreach ($data as $datum) {
-            $datum->page_thumbnail = asset("storage/{$datum->page_thumbnail}");
+            $datum->page_thumbnail = AssetUrl::dignitary($datum->page_thumbnail);
+            $datum->details_image = AssetUrl::dignitary($datum->details_image);
         }
         return $this->ok(data: $data);
     }
