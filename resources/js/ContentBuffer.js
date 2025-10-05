@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ref } from "vue";
 
 export default class ContentBuffer {
     constructor(url, windowLength = 1, marginBufferLength = null) {
@@ -12,6 +13,13 @@ export default class ContentBuffer {
     }
 
     buffer = [];
+    window = ref([]);
+
+    setWindow() {
+        const start = this.windowBeginIndex - this.bufferBeginIndex;
+        const windowSize = this.windowEndIndex - this.windowBeginIndex;
+        this.window.value = this.buffer.slice(start, start + windowSize);
+    }
 
     loadWindow() {
         //http://xyz.com?[from=4&take=1]
@@ -28,6 +36,7 @@ export default class ContentBuffer {
                     this.bufferEndIndex,
                     this.windowMaxLength,
                 );
+                this.setWindow();
             })
             .catch((err) => console.error(err));
     }
@@ -52,7 +61,7 @@ export default class ContentBuffer {
             .catch((err) => console.error(err));
     }
 
-    moveNext() {
+    forward() {
         if (this.windowEndIndex >= this.bufferEndIndex - this.bufferMargin) {
             this.loadNext();
         }
@@ -63,7 +72,7 @@ export default class ContentBuffer {
     }
 
     loadBack() {
-        //http://xyz.com?[from=4&take=1]
+        //http://xyz.com?[from=4&take=-1]
         if (this.bufferBeginIndex === 0) {
             return;
         }
@@ -85,7 +94,7 @@ export default class ContentBuffer {
             .catch((err) => console.error(err));
     }
 
-    moveBack() {
+    backward() {
         if (this.windowBeginIndex > this.bufferBeginIndex) {
             --this.windowBeginIndex;
             --this.windowEndIndex;
