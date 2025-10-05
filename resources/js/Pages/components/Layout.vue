@@ -1,5 +1,5 @@
 <script setup>
-import TopbarLink from "./components/TopbarLink.vue";
+import TopbarLink from "./TopbarLink.vue";
 defineProps(["active"]);
 </script>
 
@@ -18,7 +18,7 @@ defineProps(["active"]);
                 <TopbarLink :active="active == 'Contributions'" href="/contact"
                     >Contributions</TopbarLink
                 >
-                <img class="w-1/3" src="../../images/logo.png" alt="Logo" />
+                <img class="w-1/3" src="../../../images/logo.png" alt="Logo" />
                 <TopbarLink :active="active == 'Highlights'" href="/contact"
                     >Highlights</TopbarLink
                 >
@@ -30,7 +30,7 @@ defineProps(["active"]);
             <footer
                 class="flex flex-row items-center justify-between px-10 py-12"
             >
-                <img class="w-1/3" src="../../images/logo.png" alt="Logo" />
+                <img class="w-1/3" src="../../../images/logo.png" alt="Logo" />
                 <p
                     class="non-italic text-center font-poppins text-lg text-deepblue-500"
                 >

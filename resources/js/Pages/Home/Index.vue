@@ -1,5 +1,5 @@
 <script setup>
-import Layout from "../Layout.vue";
+import Layout from "../components/Layout.vue";
 import LeftArrowButton from "./components/LeftArrowButton.vue";
 import RightArrowButton from "./components/RightArrowButton.vue";
 import SectionHeading from "../components/SectionHeading.vue";

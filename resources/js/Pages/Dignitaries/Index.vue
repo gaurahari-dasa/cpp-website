@@ -1,7 +1,7 @@
 <script setup>
-import Layout from "../Layout.vue";
+import Layout from "../components/Layout.vue";
 import SectionHeading from "../components/SectionHeading.vue";
-import ContentBuffer from "../../ContentBuffer";
+import ContentBuffer from "../components/ContentBuffer";
 import MediaCard from "./components/MediaCard.vue";
 import Details from "./components/Details.vue";
 import { ref } from "vue";
