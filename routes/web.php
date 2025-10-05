@@ -19,6 +19,10 @@ Route::get('/srila-prabhupada', function () {
     return Inertia::render('SrilaPrabhupada/Index');
 });
 
+Route::get('/recognitions', function () {
+    return Inertia::render('Recognitions/Index');
+});
+
 Route::get('/contrib', function () {
     $take = request()->take;
     $from = request()->from;
