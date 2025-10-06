@@ -29,6 +29,10 @@ Route::get('/podcasts', function () {
 
 Route::get('/podcasts/carousel', [BufferController::class, 'podcasts']);
 
+Route::get('/other-contribs', function () {
+    return Inertia::render('OtherContribs/Index');
+});
+
 Route::get('/contrib', function () {
     $take = request()->take;
     $from = request()->from;
