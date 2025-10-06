@@ -1,12 +1,12 @@
 <script setup>
 import Layout from "../components/Layout.vue";
 import SectionHeading from "../components/SectionHeading.vue";
-import ContentBuffer from "../components/ContentBuffer";
+import ContentStore from "../components/ContentStore";
 import MediaCard from "./components/MediaCard.vue";
 import Details from "./components/Details.vue";
 import { ref } from "vue";
 
-const buffer = new ContentBuffer(
+const store = new ContentStore(
     "http://127.0.0.1:8000/dignitaries/thumbnails",
     6,
     6,
@@ -31,7 +31,7 @@ function displayDetails(card) {
             </SectionHeading>
             <div class="mt-20 grid grid-cols-2 justify-items-center gap-6">
                 <MediaCard
-                    v-for="card in buffer.window.value"
+                    v-for="card in store.window.value"
                     :imgsrc="card.page_thumbnail"
                     :title="card.page_title"
                     :content="card.page_desc"
@@ -40,7 +40,7 @@ function displayDetails(card) {
             </div>
             <button
                 class="mt-12 bg-[#10447e] px-8 py-4 text-sm font-semibold text-gray-200 uppercase"
-                @click="buffer.forward(6)"
+                @click="store.expand(6)"
             >
                 Load More
             </button>

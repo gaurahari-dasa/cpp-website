@@ -7,8 +7,8 @@ export default class ContentBuffer {
         this.windowMaxLength = windowLength;
         this.bufferMargin = marginBufferLength ?? 1;
         this.bufferMaxLength = windowLength + this.bufferMargin * 2;
-        this.windowBeginIndex = this.windowEndIndex = 0; // range is [windowMinIndex, windowMaxIndex), Haribol
-        this.bufferBeginIndex = this.bufferEndIndex = 0; // range is [bufferMinIndex, bufferMaxIndex), Haribol
+        this.windowBeginIndex = this.windowEndIndex = 0; // range is [windowBeginIndex, windowEndIndex), Haribol
+        this.bufferBeginIndex = this.bufferEndIndex = 0; // range is [bufferBeginIndex, bufferEndIndex), Haribol
         this.loadWindow();
     }
 
@@ -26,7 +26,7 @@ export default class ContentBuffer {
         const url = new URL(this.url);
         const params = url.searchParams;
         params.append("from", 0);
-        params.append("take", this.bufferMaxLength); // TODO: need to still get remaining buffer ..
+        params.append("take", this.bufferMaxLength);
         axios
             .get(url.href)
             .then((resp) => {
