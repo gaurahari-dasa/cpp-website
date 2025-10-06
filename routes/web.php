@@ -23,6 +23,12 @@ Route::get('/recognitions', function () {
     return Inertia::render('Recognitions/Index');
 });
 
+Route::get('/podcasts', function () {
+    return Inertia::render('Podcasts/Index');
+});
+
+Route::get('/podcasts/carousel', [BufferController::class, 'podcasts']);
+
 Route::get('/contrib', function () {
     $take = request()->take;
     $from = request()->from;

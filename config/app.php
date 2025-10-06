@@ -123,4 +123,10 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'baseUrl' => env('BASE_URL', ''),
+
+    'superuser' => [
+        'role_name' => 'superuser',
+    ],
+
 ];

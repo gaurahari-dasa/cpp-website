@@ -4,11 +4,21 @@ namespace App\Helpers;
 
 class AssetUrl
 {
-    public static function dignitary(string $path)
+    private static function assetUrl(string $filename, string $folder)
     {
-        if (empty($path)) {
+        if (empty($filename)) {
             return '';
         }
-        return asset("storage/dignitaries/{$path}");
+        return asset("storage/{$folder}/{$filename}");
+    }
+
+    public static function dignitary(string $filename)
+    {
+        return self::assetUrl($filename, "dignitaries");
+    }
+
+    public static function podcast(string $filename)
+    {
+        return self::assetUrl($filename, "podcasts");
     }
 }

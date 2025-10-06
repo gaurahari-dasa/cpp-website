@@ -6,12 +6,8 @@ import MediaCard from "./components/MediaCard.vue";
 import Details from "./components/Details.vue";
 import { ref } from "vue";
 
-const store = new ContentStore(
-    "http://127.0.0.1:8000/dignitaries/thumbnails",
-    6,
-    6,
-);
-
+const props = defineProps(["baseUrl"]);
+const store = new ContentStore(`${props.baseUrl}/dignitaries/thumbnails`, 6, 6);
 const detailCard = ref(null);
 
 function displayDetails(card) {

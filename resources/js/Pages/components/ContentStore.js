@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 export default class ContentStore {
     constructor(url, initialLength = 1, marginBufferLength = null) {
-        this.url = url;
+        this.url = new URL(url, location.href);
         this.bufferMargin = marginBufferLength ?? 1;
         this.bufferMaxLength = initialLength + this.bufferMargin;
         this.windowEndIndex = 0; // range is [0, windowEndIndex), Haribol

@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 export default class ContentBuffer {
     constructor(url, windowLength = 1, marginBufferLength = null) {
-        this.url = url;
+        this.url = new URL(url, location.href);
         this.windowMaxLength = windowLength;
         this.bufferMargin = marginBufferLength ?? 1;
         this.bufferMaxLength = windowLength + this.bufferMargin * 2;

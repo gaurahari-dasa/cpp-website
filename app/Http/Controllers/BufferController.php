@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\AssetUrl;
 use App\Models\Dignitary;
+use App\Models\Podcast;
 use App\Traits\ApiResponses;
 use Exception;
 use Illuminate\Http\Request;
@@ -32,10 +33,23 @@ class BufferController extends Controller
     public function dignitaries()
     {
         extract(self::computePickup());
-        $data = Dignitary::where('active', true)->skip($from)->take($take)->get();
+        $data = Dignitary::where('active', true)
+            ->skip($from)->take($take)->orderBy('ordinal')->get();
         foreach ($data as $datum) {
             $datum->page_thumbnail = AssetUrl::dignitary($datum->page_thumbnail);
             $datum->details_image = AssetUrl::dignitary($datum->details_image);
+        }
+        return $this->ok(data: $data);
+    }
+
+    public function podcasts()
+    {
+        extract(self::computePickup());
+        $data = Podcast::where('active', true)
+            ->skip($from)->take($take)->orderBy('ordinal')->get();
+        foreach ($data as $datum) {
+            $datum->home_image = AssetUrl::podcast($datum->home_image);
+            $datum->page_image = AssetUrl::podcast($datum->page_image);
         }
         return $this->ok(data: $data);
     }
