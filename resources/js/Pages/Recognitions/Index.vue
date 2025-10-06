@@ -1,6 +1,7 @@
 <script setup>
 import Layout from "../components/Layout.vue";
 import SectionHeading from "../components/SectionHeading.vue";
+import DoubleArrow from "../components/DoubleArrow.vue";
 </script>
 <template>
     <Layout active="Home">
@@ -9,11 +10,7 @@ import SectionHeading from "../components/SectionHeading.vue";
                 <SectionHeading class="text-deepblue-500"
                     >Recognitions</SectionHeading
                 >
-                <img
-                    class="mt-4"
-                    src="../../../images/border-line.png"
-                    alt="Stylish Double Sided Arrow"
-                />
+                <DoubleArrow />
                 <div class="mt-20">
                     <img
                         src="../../../images/recognitions/recog1.jpg"
