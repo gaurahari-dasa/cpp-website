@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\AssetUrl;
 use App\Models\Dignitary;
+use App\Models\Event;
 use App\Models\Highlight;
 use App\Models\Podcast;
 use App\Traits\ApiResponses;
@@ -39,6 +40,18 @@ class BufferController extends Controller
         foreach ($data as $datum) {
             $datum->page_thumbnail = AssetUrl::dignitary($datum->page_thumbnail);
             $datum->details_image = AssetUrl::dignitary($datum->details_image);
+        }
+        return $this->ok(data: $data);
+    }
+
+    public function events()
+    {
+        extract(self::computePickup());
+        $data = Event::where('active', true)
+            ->skip($from)->take($take)->orderBy('ordinal')->get();
+        foreach ($data as $datum) {
+            $datum->page_thumbnail = AssetUrl::event($datum->page_thumbnail);
+            $datum->details_image = AssetUrl::event($datum->details_image);
         }
         return $this->ok(data: $data);
     }

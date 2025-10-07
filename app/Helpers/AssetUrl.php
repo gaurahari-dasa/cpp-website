@@ -17,6 +17,11 @@ class AssetUrl
         return self::assetUrl($filename, "dignitaries");
     }
 
+    public static function event(string $filename)
+    {
+        return self::assetUrl($filename, "events");
+    }
+
     public static function podcast(string $filename)
     {
         return self::assetUrl($filename, "podcasts");

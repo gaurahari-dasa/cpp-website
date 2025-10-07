@@ -15,6 +15,12 @@ Route::get('/dignitaries', function () {
 
 Route::get('/dignitaries/thumbnails', [BufferController::class, 'dignitaries']);
 
+Route::get('/events', function () {
+    return Inertia::render('Events/Index');
+});
+
+Route::get('/events/thumbnails', [BufferController::class, 'events']);
+
 Route::get('/srila-prabhupada', function () {
     return Inertia::render('SrilaPrabhupada/Index');
 });
