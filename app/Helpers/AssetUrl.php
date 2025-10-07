@@ -21,4 +21,9 @@ class AssetUrl
     {
         return self::assetUrl($filename, "podcasts");
     }
+
+    public static function highlight(string $filename, $year)
+    {
+        return self::assetUrl($filename, "highlights/{$year}");
+    }
 }

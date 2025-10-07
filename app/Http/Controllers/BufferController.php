@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\AssetUrl;
 use App\Models\Dignitary;
+use App\Models\Highlight;
 use App\Models\Podcast;
 use App\Traits\ApiResponses;
 use Exception;
@@ -50,6 +51,18 @@ class BufferController extends Controller
         foreach ($data as $datum) {
             $datum->home_image = AssetUrl::podcast($datum->home_image);
             $datum->page_image = AssetUrl::podcast($datum->page_image);
+        }
+        return $this->ok(data: $data);
+    }
+
+    public function highlights()
+    {
+        extract(self::computePickup());
+        $year = request()->year;
+        $data = Highlight::where('active', true)->where('at_year', $year)
+            ->skip($from)->take($take)->orderBy('ordinal')->get();
+        foreach ($data as $datum) {
+            $datum->page_image = AssetUrl::highlight($datum->page_image, $year);
         }
         return $this->ok(data: $data);
     }

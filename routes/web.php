@@ -33,6 +33,12 @@ Route::get('/other-contribs', function () {
     return Inertia::render('OtherContribs/Index');
 });
 
+Route::get('/highlights', function () {
+    return Inertia::render('Highlights/Index');
+});
+
+Route::get('/highlights/thumbnails', [BufferController::class, 'highlights']);
+
 Route::get('/contrib', function () {
     $take = request()->take;
     $from = request()->from;
