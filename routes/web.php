@@ -45,6 +45,12 @@ Route::get('/highlights', function () {
 
 Route::get('/highlights/thumbnails', [BufferController::class, 'highlights']);
 
+Route::get('/media', function () {
+    return Inertia::render('Media/Index');
+});
+
+Route::get('/media/carousel', [BufferController::class, 'media']);
+
 Route::get('/contrib', function () {
     $take = request()->take;
     $from = request()->from;

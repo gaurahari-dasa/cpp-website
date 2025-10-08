@@ -6,6 +6,7 @@ use App\Helpers\AssetUrl;
 use App\Models\Dignitary;
 use App\Models\Event;
 use App\Models\Highlight;
+use App\Models\Medium;
 use App\Models\Podcast;
 use App\Traits\ApiResponses;
 use Exception;
@@ -76,6 +77,18 @@ class BufferController extends Controller
             ->skip($from)->take($take)->orderBy('ordinal')->get();
         foreach ($data as $datum) {
             $datum->page_image = AssetUrl::highlight($datum->page_image, $year);
+        }
+        return $this->ok(data: $data);
+    }
+
+    public function media()
+    {
+        extract(self::computePickup());
+        $data = Medium::where('active', true)
+            ->skip($from)->take($take)->orderBy('ordinal')->get();
+        foreach ($data as $datum) {
+            $datum->home_image = AssetUrl::medium($datum->home_image);
+            $datum->page_image = AssetUrl::medium($datum->page_image);
         }
         return $this->ok(data: $data);
     }

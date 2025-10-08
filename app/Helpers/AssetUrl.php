@@ -31,4 +31,9 @@ class AssetUrl
     {
         return self::assetUrl($filename, "highlights/{$year}");
     }
+
+    public static function medium(string $filename)
+    {
+        return self::assetUrl($filename, "media");
+    }
 }
