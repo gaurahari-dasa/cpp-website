@@ -6,6 +6,10 @@ import SectionHeading from "../components/SectionHeading.vue";
 import MediaCard from "./components/MediaCard.vue";
 import LeftButton from "./components/LeftButton.vue";
 import RightButton from "./components/RightButton.vue";
+import DoubleArrow from "../components/DoubleArrow.vue";
+import { Link } from "@inertiajs/vue3";
+
+const props = defineProps(["baseUrl"]);
 </script>
 
 <template>
@@ -72,6 +76,7 @@ import RightButton from "./components/RightButton.vue";
                 <SectionHeading class="text-gray-200"
                     >Contributions</SectionHeading
                 >
+                <DoubleArrow class="mt-4" />
                 <div class="mt-10 flex flex-row items-center">
                     <LeftArrowButton />
                     <div class="relative ml-4 flex shrink-0 flex-row">
@@ -114,6 +119,7 @@ import RightButton from "./components/RightButton.vue";
                     <SectionHeading class="text-deepblue-500"
                         >Highlights</SectionHeading
                     >
+                    <DoubleArrow class="mt-4" />
                     <p
                         class="mt-8 text-center text-base/loose font-light text-gray-600"
                     >
@@ -121,11 +127,12 @@ import RightButton from "./components/RightButton.vue";
                         projects focused towards community upliftment, social
                         welfare programmes and cultural heritage preservation.
                     </p>
-                    <button
+                    <Link
                         class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                        :href="`${props.baseUrl}/highlights`"
                     >
                         Read More
-                    </button>
+                    </Link>
                 </div>
                 <img
                     src="../../../images/home-page/highlights-img1.jpg"
@@ -138,6 +145,7 @@ import RightButton from "./components/RightButton.vue";
                 class="flex flex-col items-center bg-[url(../images/home-page/bg1.jpg)] bg-cover px-4 py-20"
             >
                 <SectionHeading class="text-deepblue-500">Media</SectionHeading>
+                <DoubleArrow class="mt-4" />
                 <div class="flex flex-row items-center justify-center gap-4">
                     <LeftButton />
                     <div class="mt-16 grid grid-cols-3 gap-8">
@@ -166,6 +174,7 @@ import RightButton from "./components/RightButton.vue";
                 class="flex flex-col items-center bg-[url(../images/home-page/bg3.jpg)] bg-cover bg-no-repeat px-32 pt-16 pb-30"
             >
                 <SectionHeading class="text-gray-200">Events</SectionHeading>
+                <DoubleArrow class="mt-4" />
                 <div class="mt-10 flex flex-row items-center">
                     <LeftArrowButton />
                     <div class="relative ml-4 flex shrink-0 flex-row">
@@ -203,25 +212,31 @@ import RightButton from "./components/RightButton.vue";
 
             <!-- Dignitaries Section, Haribol -->
             <section
-                class="flex h-[38rem] flex-col items-center justify-center bg-[url(../images/home-page/dignitaries-bg.jpg)] bg-contain bg-center bg-no-repeat"
+                class="flex h-[38rem] flex-col items-center justify-center bg-[url(../images/home-page/dignitaries-bg.jpg)] bg-cover bg-center"
             >
-                <div class="grid grid-cols-12 items-center justify-self-center">
-                    <SectionHeading class="col-span-8 col-start-2 text-gray-200"
-                        >Dignitaries</SectionHeading
-                    >
+                <div
+                    class="grid grid-cols-12 items-center justify-items-center"
+                >
+                    <div class="col-span-7 flex flex-col items-center">
+                        <SectionHeading class="text-gray-200"
+                            >Dignitaries</SectionHeading
+                        >
+                        <DoubleArrow class="mt-4" />
+                    </div>
                     <LeftArrowButton class="justify col-span-1 row-start-2" />
-                    <div class="col-span-8 row-start-2">
+                    <div class="col-span-7 row-start-2">
                         <p class="mt-10 text-gray-200">
                             Featuring eminent leaders, scholars and visionaries
                             from across the world coming together for shared
                             commitments, reflecting the universal relevance of
                             the message of harmony and service.
                         </p>
-                        <button
+                        <Link
                             class="mt-6 border border-blue-800 bg-gray-200 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                            :href="`${props.baseUrl}/dignitaries`"
                         >
                             Read More
-                        </button>
+                        </Link>
                     </div>
                     <RightArrowButton
                         class="col-span-1 col-start-12 row-start-2"
@@ -235,6 +250,7 @@ import RightButton from "./components/RightButton.vue";
                     <SectionHeading class="text-deepblue-500"
                         >Podcasts</SectionHeading
                     >
+                    <DoubleArrow class="mt-4" />
                     <p
                         class="mt-10 text-center text-sm font-light text-gray-500"
                     >
@@ -243,11 +259,12 @@ import RightButton from "./components/RightButton.vue";
                         practices, Vedic wisdom and holistic well-being of a
                         person in the modern world.
                     </p>
-                    <button
+                    <Link
                         class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
+                        :href="`${props.baseUrl}/podcasts`"
                     >
                         Read More
-                    </button>
+                    </Link>
                 </div>
                 <div class="flex flex-row items-center justify-center gap-4">
                     <img
