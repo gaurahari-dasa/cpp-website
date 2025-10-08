@@ -1,9 +1,19 @@
 <script setup>
 import Layout from "../components/Layout.vue";
+import SectionHeading from "../components/SectionHeading.vue";
+import DoubleArrow from "../components/DoubleArrow.vue";
 </script>
 <template>
     <Layout active="Home">
-        <div class="flex flex-col gap-20 px-16 py-20 font-poppins">
+        <div
+            class="flex flex-col gap-20 bg-[url(../images/other-contribs/bg1.jpg)] px-16 py-20 font-poppins"
+        >
+            <div class="flex flex-col items-center">
+                <SectionHeading class="text-deepblue-500"
+                    >Other Contributions</SectionHeading
+                >
+                <DoubleArrow class="mt-2" />
+            </div>
             <div class="flex items-start gap-16">
                 <img
                     class="w-[30%] shrink-0"
