@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\AssetUrl;
+use App\Models\AkshayaPatra;
 use App\Models\Dignitary;
 use App\Models\Event;
 use App\Models\Highlight;
@@ -89,6 +90,17 @@ class BufferController extends Controller
         foreach ($data as $datum) {
             $datum->home_image = AssetUrl::medium($datum->home_image);
             $datum->page_image = AssetUrl::medium($datum->page_image);
+        }
+        return $this->ok(data: $data);
+    }
+
+    public function akshayaPatra()
+    {
+        extract(self::computePickup());
+        $data = AkshayaPatra::where('active', true)
+            ->skip($from)->take($take)->orderBy('ordinal')->get();
+        foreach ($data as $datum) {
+            $datum->page_image = AssetUrl::akshayaPatra($datum->page_image);
         }
         return $this->ok(data: $data);
     }

@@ -36,4 +36,9 @@ class AssetUrl
     {
         return self::assetUrl($filename, "media");
     }
+
+    public static function akshayaPatra(string $filename)
+    {
+        return self::assetUrl($filename, "akshaya-patra");
+    }
 }
