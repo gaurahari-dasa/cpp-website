@@ -4,7 +4,7 @@ import SectionHeading from "../components/SectionHeading.vue";
 import DoubleArrow from "../components/DoubleArrow.vue";
 </script>
 <template>
-    <Layout active="Home">
+    <Layout active="Home" :base-url>
         <div class="font-poppins">
             <div class="flex flex-col items-center bg-blue-50 px-70 py-36">
                 <SectionHeading class="text-deepblue-500"

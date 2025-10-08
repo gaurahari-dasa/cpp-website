@@ -18,7 +18,7 @@ function navigateTo(year) {
 }
 </script>
 <template>
-    <Layout active="Home">
+    <Layout active="Home" :base-url>
         <div class="font-poppins">
             <div class="flex flex-col items-center">
                 <SectionHeading class="mt-20 text-deepblue-500"

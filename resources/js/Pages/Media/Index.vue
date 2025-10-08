@@ -11,7 +11,7 @@ const props = defineProps(["baseUrl"]);
 const buffer = new ContentBuffer(`${props.baseUrl}/media/carousel`, 3, 3);
 </script>
 <template>
-    <Layout active="Home">
+    <Layout active="Home" :base-url>
         <div class="font-poppins">
             <div
                 class="flex flex-col items-center bg-[url(../images/media/bg1.jpg)] px-16 py-20"

@@ -3,7 +3,7 @@ import Layout from "../components/Layout.vue";
 import SectionHeading from "../components/SectionHeading.vue";
 </script>
 <template>
-    <Layout active="Home">
+    <Layout active="Home" :base-url>
         <div class="font-poppins">
             <!-- About Section, Haribol -->
             <section
