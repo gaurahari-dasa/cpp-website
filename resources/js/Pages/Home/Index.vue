@@ -13,7 +13,7 @@ const props = defineProps(["baseUrl"]);
 </script>
 
 <template>
-    <Layout active="Home">
+    <Layout active="Home" :base-url>
         <div class="font-poppins">
             <!-- Hero Section, Haribol -->
             <section class="relative">
@@ -129,7 +129,7 @@ const props = defineProps(["baseUrl"]);
                     </p>
                     <Link
                         class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
-                        :href="`${props.baseUrl}/highlights`"
+                        :href="`${baseUrl}/highlights`"
                     >
                         Read More
                     </Link>
@@ -233,7 +233,7 @@ const props = defineProps(["baseUrl"]);
                         </p>
                         <Link
                             class="mt-6 border border-blue-800 bg-gray-200 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
-                            :href="`${props.baseUrl}/dignitaries`"
+                            :href="`${baseUrl}/dignitaries`"
                         >
                             Read More
                         </Link>
@@ -261,7 +261,7 @@ const props = defineProps(["baseUrl"]);
                     </p>
                     <Link
                         class="mt-6 border border-blue-800 px-8 py-4 text-[0.9rem] font-medium text-gray-800 uppercase"
-                        :href="`${props.baseUrl}/podcasts`"
+                        :href="`${baseUrl}/podcasts`"
                     >
                         Read More
                     </Link>
