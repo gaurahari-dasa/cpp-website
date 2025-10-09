@@ -1,21 +1,13 @@
 <script setup>
 import SectionHeading from "../../components/SectionHeading.vue";
 import { XMarkIcon } from "@heroicons/vue/16/solid";
+import Modal from "../../components/Modal.vue";
 
 defineProps(["card"]);
-defineEmits(["close"]);
 </script>
 <template>
-    <div
-        class="fixed inset-0 z-10 flex items-center justify-center bg-black/50"
-    >
-        <div
-            class="relative flex max-h-5/6 max-w-5/6 flex-col items-center overflow-y-scroll bg-gray-200 px-8 py-10"
-        >
-            <XMarkIcon
-                class="absolute top-1 right-1 size-6"
-                @click="$emit('close')"
-            />
+    <Modal>
+        <div class="flex flex-col items-center">
             <img :src="card.page_image" alt="Podcast Popup Image" />
             <SectionHeading class="mt-20 text-deepblue-500">{{
                 card.page_title
@@ -24,5 +16,5 @@ defineEmits(["close"]);
                 {{ card.page_text }}
             </p>
         </div>
-    </div>
+    </Modal>
 </template>
