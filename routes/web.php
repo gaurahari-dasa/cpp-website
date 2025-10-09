@@ -57,6 +57,12 @@ Route::get('/akshaya-patra', function () {
 
 Route::get('/akshaya-patra/carousel', [BufferController::class, 'akshayaPatra']);
 
+Route::get('/about', function () {
+    return Inertia::render('About/Index');
+});
+
+Route::get('/about/life/carousel', [BufferController::class, 'aboutLife']);
+
 Route::get('/contrib', function () {
     $take = request()->take;
     $from = request()->from;

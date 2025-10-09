@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\AssetUrl;
+use App\Models\AboutLife;
 use App\Models\AkshayaPatra;
 use App\Models\Dignitary;
 use App\Models\Event;
@@ -101,6 +102,17 @@ class BufferController extends Controller
             ->skip($from)->take($take)->orderBy('ordinal')->get();
         foreach ($data as $datum) {
             $datum->page_image = AssetUrl::akshayaPatra($datum->page_image);
+        }
+        return $this->ok(data: $data);
+    }
+
+    public function aboutLife()
+    {
+        extract(self::computePickup());
+        $data = AboutLife::where('active', true)
+            ->skip($from)->take($take)->orderBy('ordinal')->get();
+        foreach ($data as $datum) {
+            $datum->page_image = AssetUrl::aboutLife($datum->page_image);
         }
         return $this->ok(data: $data);
     }

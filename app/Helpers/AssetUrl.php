@@ -41,4 +41,9 @@ class AssetUrl
     {
         return self::assetUrl($filename, "akshaya-patra");
     }
+
+    public static function aboutLife(string $filename)
+    {
+        return self::assetUrl($filename, "about");
+    }
 }

@@ -20,7 +20,7 @@ function displayDetails(card) {
     <Layout active="Dignitaries">
         <Details v-if="detailCard" :card="detailCard" />
         <div
-            class="flex flex-col items-center bg-deepblue-100 px-18 py-20 font-poppins"
+            class="flex flex-col items-center bg-blue-50 px-18 py-20 font-poppins"
         >
             <SectionHeading v-show="!detailCard" class="text-deepblue-500">
                 Dignitaries
