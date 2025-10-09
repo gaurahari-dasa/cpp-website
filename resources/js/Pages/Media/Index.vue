@@ -6,13 +6,23 @@ import ContentBuffer from "../components/ContentBuffer";
 import MediaCard from "./components/MediaCard.vue";
 import LeftArrowHeadBlue from "../components/LeftArrowHeadBlue.vue";
 import RightArrowHeadBlue from "../components/RightArrowHeadBlue.vue";
+import Modal from "../components/Modal.vue";
+import { ref } from "vue";
 
 const props = defineProps(["baseUrl"]);
 const buffer = new ContentBuffer(`${props.baseUrl}/media/carousel`, 3, 3);
+const selectedCard = ref(null);
+
+function displayCard(card) {
+    selectedCard.value = card;
+}
 </script>
 <template>
     <Layout active="Home" :base-url>
         <div class="font-poppins">
+            <Modal v-if="selectedCard" @close="selectedCard = null">
+                <MediaCard :card="selectedCard" />
+            </Modal>
             <div
                 class="flex flex-col items-center bg-[url(../images/media/bg1.jpg)] px-16 py-20"
             >
@@ -25,7 +35,7 @@ const buffer = new ContentBuffer(`${props.baseUrl}/media/carousel`, 3, 3);
                 >
                     <LeftArrowHeadBlue @click="buffer.backward(3)" />
                     <div class="px-2 py-1" v-for="card in buffer.window.value">
-                        <MediaCard :card />
+                        <MediaCard :card @click="displayCard(card)" />
                     </div>
                     <RightArrowHeadBlue @click="buffer.forward(3)" />
                 </div>
