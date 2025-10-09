@@ -31,9 +31,7 @@ defineProps(["active", "baseUrl"]);
                 >
             </header>
             <slot />
-            <footer
-                class="flex flex-row items-center justify-between px-10 py-12"
-            >
+            <footer class="flex items-center justify-between px-10 py-12">
                 <img class="w-1/3" src="../../../images/logo.png" alt="Logo" />
                 <p
                     class="non-italic text-center font-poppins text-lg text-deepblue-500"

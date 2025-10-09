@@ -7,6 +7,8 @@ import MediaCard from "./components/MediaCard.vue";
 import LeftButton from "./components/LeftButton.vue";
 import RightButton from "./components/RightButton.vue";
 import DoubleArrow from "../components/DoubleArrow.vue";
+import LeftArrowHead from "../components/LeftArrowHead.vue";
+import RightArrowHead from "../components/RightArrowHead.vue";
 import { Link } from "@inertiajs/vue3";
 
 const props = defineProps(["baseUrl"]);
@@ -38,7 +40,7 @@ const props = defineProps(["baseUrl"]);
 
             <!-- About Section, Haribol -->
             <section
-                class="flex flex-row gap-20 bg-[url(../images/home-page/bg1.jpg)] bg-cover px-18 py-24"
+                class="flex gap-20 bg-[url(../images/home-page/bg1.jpg)] bg-cover px-18 py-24"
             >
                 <img
                     src="../../../images/home-page/img3.png"
@@ -77,9 +79,9 @@ const props = defineProps(["baseUrl"]);
                     >Contributions</SectionHeading
                 >
                 <DoubleArrow class="mt-4" />
-                <div class="mt-10 flex flex-row items-center">
+                <div class="mt-10 flex items-center">
                     <LeftArrowButton />
-                    <div class="relative ml-4 flex shrink-0 flex-row">
+                    <div class="relative ml-4 flex shrink-0">
                         <img
                             class="w-[28rem] shrink-0"
                             src="../../../images/Akshaya Patra Foundation- Contributions.png"
@@ -146,7 +148,7 @@ const props = defineProps(["baseUrl"]);
             >
                 <SectionHeading class="text-deepblue-500">Media</SectionHeading>
                 <DoubleArrow class="mt-4" />
-                <div class="flex flex-row items-center justify-center gap-4">
+                <div class="flex items-center justify-center gap-4">
                     <LeftButton />
                     <div class="mt-16 grid grid-cols-3 gap-8">
                         <MediaCard
@@ -175,9 +177,9 @@ const props = defineProps(["baseUrl"]);
             >
                 <SectionHeading class="text-gray-200">Events</SectionHeading>
                 <DoubleArrow class="mt-4" />
-                <div class="mt-10 flex flex-row items-center">
+                <div class="mt-10 flex items-center">
                     <LeftArrowButton />
-                    <div class="relative ml-4 flex shrink-0 flex-row">
+                    <div class="relative ml-4 flex shrink-0">
                         <img
                             class="w-[28rem] shrink-0"
                             src="../../../images/img5.png"
@@ -266,16 +268,24 @@ const props = defineProps(["baseUrl"]);
                         Read More
                     </Link>
                 </div>
-                <div class="flex flex-row items-center justify-center gap-4">
-                    <img
-                        src="../../../images/podcast1.png"
-                        class="w-[28rem]"
-                        alt="Podcast 1"
+                <div class="relative">
+                    <LeftArrowHead
+                        class="absolute top-1/2 left-1 size-6 -translate-y-1/2"
                     />
-                    <img
-                        src="../../../images/podcast2.png"
-                        class="w-72"
-                        alt="Podcast 1"
+                    <div class="flex items-center justify-center gap-4">
+                        <img
+                            src="../../../images/podcast1.png"
+                            class="w-[28rem]"
+                            alt="Podcast 1"
+                        />
+                        <img
+                            src="../../../images/podcast2.png"
+                            class="w-72"
+                            alt="Podcast 1"
+                        />
+                    </div>
+                    <RightArrowHead
+                        class="absolute top-1/2 right-1 size-6 -translate-y-1/2"
                     />
                 </div>
             </section>

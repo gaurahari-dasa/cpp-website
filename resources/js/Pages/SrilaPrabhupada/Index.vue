@@ -7,7 +7,7 @@ import SectionHeading from "../components/SectionHeading.vue";
         <div class="font-poppins">
             <!-- About Section, Haribol -->
             <section
-                class="flex flex-row gap-20 bg-[url(../images/sp-page/bg1.jpg)] bg-cover px-18 py-34"
+                class="flex gap-20 bg-[url(../images/sp-page/bg1.jpg)] bg-cover px-18 py-34"
             >
                 <img
                     src="../../../images/sp-page/i1.png"
@@ -60,7 +60,7 @@ import SectionHeading from "../components/SectionHeading.vue";
             </section>
 
             <!-- Vishwaguru Title Section, Haribol -->
-            <section class="flex flex-row items-center bg-[#def0fa]">
+            <section class="flex items-center bg-[#def0fa]">
                 <p class="px-20 text-[22px]/relaxed text-gray-500">
                     Srila Prabhupada’s vision and legacy continue through the
                     ongoing initiatives, spiritual and social activities at the
