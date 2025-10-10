@@ -51,7 +51,7 @@ const props = defineProps(["baseUrl"]);
                     class="w-[40%] shrink-0"
                     alt="CPP Intro Image"
                 />
-                <div class="relative flex-col">
+                <div class="relative flex flex-col items-start">
                     <div class="mt-8 w-36 border border-gray-800"></div>
                     <div
                         class="absolute -left-6 mt-2 w-36 border border-dashed border-gray-800"
@@ -67,11 +67,12 @@ const props = defineProps(["baseUrl"]);
                         in 1984 and has been working tirelessly for the
                         betterment of humanity since then.
                     </p>
-                    <button
+                    <Link
                         class="mt-10 bg-teal-600 px-8 py-4 text-sm font-semibold text-gray-200 uppercase"
+                        :href="`${baseUrl}/about`"
                     >
                         Read More
-                    </button>
+                    </Link>
                 </div>
             </section>
 
