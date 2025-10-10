@@ -11,7 +11,7 @@ const props = defineProps(["baseUrl"]);
 const buffer = new ContentBuffer(`${props.baseUrl}/about/life/carousel`, 1, 1);
 </script>
 <template>
-    <Layout active="Home" :base-url>
+    <Layout active="About" :base-url>
         <div class="font-poppins">
             <div class="flex flex-col">
                 <img

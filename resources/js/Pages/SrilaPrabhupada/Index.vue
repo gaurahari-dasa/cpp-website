@@ -5,7 +5,7 @@ import SectionHeading from "../components/SectionHeading.vue";
 defineProps(["baseUrl"]);
 </script>
 <template>
-    <Layout active="Home" :base-url>
+    <Layout active="Srila Prabhupada" :base-url>
         <div class="font-poppins">
             <!-- About Section, Haribol -->
             <section

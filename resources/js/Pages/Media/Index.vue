@@ -18,7 +18,7 @@ function displayCard(card) {
 }
 </script>
 <template>
-    <Layout active="Home" :base-url>
+    <Layout active="Media" :base-url>
         <div class="font-poppins">
             <Modal v-if="selectedCard" @close="selectedCard = null">
                 <MediaCard :card="selectedCard" />

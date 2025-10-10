@@ -19,7 +19,7 @@ function displayDetails(card) {
 }
 </script>
 <template>
-    <Layout active="Home" :base-url>
+    <Layout active="Podcasts" :base-url>
         <div class="font-poppins">
             <Details
                 v-if="detailCard"

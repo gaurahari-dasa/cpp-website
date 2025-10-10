@@ -14,7 +14,7 @@ const buffer = new ContentBuffer(
 );
 </script>
 <template>
-    <Layout active="Home" :base-url>
+    <Layout active="Akshaya Patra" :base-url>
         <div class="font-poppins">
             <img
                 src="../../../images/akshaya-patra/CPP template - Akshaya Patra-modified.jpg"

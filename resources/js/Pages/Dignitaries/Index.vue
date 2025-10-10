@@ -7,7 +7,7 @@ import Details from "./components/Details.vue";
 import { ref } from "vue";
 
 const props = defineProps(["baseUrl"]);
-const store = new ContentStore(`${props.baseUrl}/dignitaries/thumbnails`, 6, 6);
+const store = new ContentStore(`${props.baseUrl}/dignitaries/thumbnails`, 4, 4);
 const detailCard = ref(null);
 
 function displayDetails(card) {

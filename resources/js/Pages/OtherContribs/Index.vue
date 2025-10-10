@@ -6,7 +6,7 @@ import DoubleArrow from "../components/DoubleArrow.vue";
 defineProps(["baseUrl"]);
 </script>
 <template>
-    <Layout active="Home" :base-url>
+    <Layout active="Contributions" :base-url>
         <div
             class="flex flex-col gap-20 bg-[url(../images/other-contribs/bg1.jpg)] px-16 py-20 font-poppins"
         >
