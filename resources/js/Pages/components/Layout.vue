@@ -12,7 +12,9 @@ defineProps(["active", "baseUrl"]);
                 <TopbarLink :active="active == 'Home'" :href="`${baseUrl}/`"
                     >Home</TopbarLink
                 >
-                <TopbarLink :active="active == 'About'" href="/about"
+                <TopbarLink
+                    :active="active == 'About'"
+                    :href="`${baseUrl}/about`"
                     >About</TopbarLink
                 >
                 <TopbarLink
@@ -26,7 +28,7 @@ defineProps(["active", "baseUrl"]);
                     :href="`${baseUrl}/highlights`"
                     >Highlights</TopbarLink
                 >
-                <TopbarLink :active="active == 'Contact'" href="/contact"
+                <TopbarLink :active="active == 'Contact'" href="#"
                     >Contact</TopbarLink
                 >
             </header>
