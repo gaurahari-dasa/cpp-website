@@ -1,6 +1,8 @@
 <script setup>
 import Layout from "../components/Layout.vue";
 import SectionHeading from "../components/SectionHeading.vue";
+
+defineProps(["baseUrl"]);
 </script>
 <template>
     <Layout active="Home" :base-url>

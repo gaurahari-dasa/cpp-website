@@ -2,6 +2,8 @@
 import Layout from "../components/Layout.vue";
 import SectionHeading from "../components/SectionHeading.vue";
 import DoubleArrow from "../components/DoubleArrow.vue";
+
+defineProps(["baseUrl"]);
 </script>
 <template>
     <Layout active="Home" :base-url>

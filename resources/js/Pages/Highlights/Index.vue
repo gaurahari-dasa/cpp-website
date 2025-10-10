@@ -4,7 +4,6 @@ import SectionHeading from "../components/SectionHeading.vue";
 import DoubleArrow from "../components/DoubleArrow.vue";
 import SlottedNav from "../components/SlottedNav.vue";
 import ContentStore from "../components/ContentStore";
-import axios from "axios";
 import { ref } from "vue";
 
 const props = defineProps(["baseUrl"]);

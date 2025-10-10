@@ -11,6 +11,10 @@ import LeftArrowHead from "../components/LeftArrowHead.vue";
 import RightArrowHead from "../components/RightArrowHead.vue";
 import { Link } from "@inertiajs/vue3";
 
+import mediaImg1 from "../../../images/media-img1.jpg";
+import mediaImg2 from "../../../images/media-img2.jpg";
+import mediaImg3 from "../../../images/media-img3.jpg";
+
 const props = defineProps(["baseUrl"]);
 </script>
 
@@ -152,17 +156,17 @@ const props = defineProps(["baseUrl"]);
                     <LeftButton />
                     <div class="mt-16 grid grid-cols-3 gap-8">
                         <MediaCard
-                            imgsrc="/img/media-img1.jpg"
+                            :imgsrc="mediaImg1"
                             title="Gita Jayanti 2024"
                             content="Sri Chanchalapathi Dasa explains that reading the Bhagavad Gita properly, as advised by Krishna, is like seeing Him face-to-face. This involves approaching a bonafide spiritual master with devotion and surrender..."
                         />
                         <MediaCard
-                            imgsrc="/img/media-img2.jpg"
+                            :imgsrc="mediaImg2"
                             title="The role of meditation in mental health"
                             content="Meditation, as emphasized by Srila Prabhupada, is a transformative process that aligns individuals with their true spiritual nature, reduces stress, and builds resilience."
                         />
                         <MediaCard
-                            imgsrc="/img/media-img3.jpg"
+                            :imgsrc="mediaImg3"
                             title="What is the goal of life?"
                             content="One has to be very blessed to get the right understanding. But what happens? Even in our country, there are so many philosophers, and even scholars of Vedic knowledge, yet they still miss some essential truths."
                         />
