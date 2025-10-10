@@ -9,10 +9,10 @@ defineProps(["card"]);
     <Modal>
         <div class="flex flex-col items-center">
             <img :src="card.page_image" alt="Podcast Popup Image" />
-            <SectionHeading class="mt-20 text-deepblue-500">{{
+            <SectionHeading class="mt-8 text-gray-200">{{
                 card.page_title
             }}</SectionHeading>
-            <p class="mt-8 text-center text-2xl/loose text-deepblue-500">
+            <p class="mt-4 text-center text-2xl/loose text-gray-200">
                 {{ card.page_text }}
             </p>
         </div>

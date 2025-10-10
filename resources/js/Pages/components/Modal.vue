@@ -5,7 +5,7 @@ defineEmits(["close"]);
 </script>
 <template>
     <div
-        class="fixed inset-0 z-10 flex items-center justify-center bg-gray-800/50"
+        class="fixed inset-0 z-10 flex items-center justify-center bg-gray-800/85"
     >
         <div
             class="relative flex max-h-5/6 flex-col items-center overflow-y-scroll px-8"
